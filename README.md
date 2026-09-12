@@ -2,7 +2,8 @@
 # Semantic & Accessible Portfolio Webpage
 
 
-To access the webpage click the below link
+To access the webpage click the below link:
+ https://neerajjkm.github.io/HTML5-Semantic-Structure-Accessibility/
 
 A production-ready, fully semantic skeleton for a modern portfolio website engineered specifically to achieve **100/100 Lighthouse Accessibility** and **100/100 Lighthouse SEO** scores.
 
