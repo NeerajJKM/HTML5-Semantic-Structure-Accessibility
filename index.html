@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera | Senior Frontend Engineer Portfolio</title>
+  
+  <!-- Lighthouse SEO Essentials -->
+  <meta name="description" content="Portfolio of Alex Rivera, a Senior Frontend Engineer specializing in accessible, high-performance web applications and design systems.">
+  <link rel="canonical" href="https://example.com/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:title" content="Alex Rivera | Senior Frontend Engineer">
+  <meta property="og:description" content="Specializing in accessible, high-performance web applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/og-preview.jpg">
+
+  <style>
+    /* Focus visible & Skip-link styling for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: #000;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+    :focus-visible {
+      outline: 3px solid #005fcc;
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Bypass block for keyboard & screen reader accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top-level Landmark: Header -->
+  <header>
+    <!-- Single H1 per page for document hierarchy -->
+    <h1>Alex Rivera</h1>
+    <p>Senior Frontend Engineer &amp; Accessibility Advocate</p>
+
+    <!-- Navigation landmark differentiated via aria-label -->
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Top-level Landmark: Main (Only 1 per page) -->
+  <main id="main-content">
+    
+    <!-- Section: About -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>
+        I build high-performance, accessible digital products. With over 
+        <time datetime="P7Y">7 years</time> of industry experience, I bridge design systems 
+        and resilient web standards.
+      </p>
+      
+      <!-- Complementary content inside an aside -->
+      <aside aria-label="Core proficiencies">
+        <h3>Core Competencies</h3>
+        <ul>
+          <li>Semantic HTML5 &amp; WCAG 2.2 AA</li>
+          <li>Modern JavaScript (ESNext, TypeScript)</li>
+          <li>CSS Architecture &amp; Fluid Typography</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Section: Projects containing self-contained Articles -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Featured Projects</h2>
+
+      <!-- Project 1: Independent reusable entity (Article) -->
+      <article>
+        <header>
+          <h3>Design System Component Library</h3>
+          <p>
+            Launched on <time datetime="2024-03-15">March 15, 2024</time>
+          </p>
+        </header>
+
+        <figure>
+          <!-- Explicit width, height, and descriptive alt prevent CLS & boost A11y -->
+          <img 
+            src="project-preview.jpg" 
+            alt="Screenshot of UI component showcase demonstrating WCAG-compliant color contrasts" 
+            width="800" 
+            height="450" 
+            loading="lazy"
+          >
+          <figcaption>Interactive documentation for 40+ accessible UI primitives.</figcaption>
+        </figure>
+
+        <p>
+          Constructed a zero-runtime headless component library ensuring total screen reader 
+          parity and full keyboard navigation.
+        </p>
+
+        <footer>
+          <p><strong>Stack:</strong> TypeScript, Web Components, Storybook</p>
+          <a href="https://example.com/project-one" aria-label="View Design System live case study">Read Case Study</a>
+        </footer>
+      </article>
+
+      <!-- Project 2 -->
+      <article>
+        <header>
+          <h3>E-Commerce Performance Overhaul</h3>
+          <p>
+            Duration: <time datetime="PT4M">4 months</time>
+          </p>
+        </header>
+        
+        <p>
+          Refactored legacy DOM structures to lean semantic elements, reducing overall bundle size 
+          and improving Largest Contentful Paint (LCP) by 45%.
+        </p>
+        
+        <footer>
+          <p><strong>Stack:</strong> Next.js, Node.js, Cloudflare Edge</p>
+          <a href="https://example.com/project-two" aria-label="View E-Commerce project repository">View Source Code</a>
+        </footer>
+      </article>
+    </section>
+
+    <!-- Section: Experience -->
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Work History</h2>
+
+      <article>
+        <header>
+          <h3>Lead Frontend Architect &mdash; TechCorp</h3>
+          <p>
+            <time datetime="2022-01">January 2022</time> &ndash; <time datetime="2024-08">August 2024</time>
+          </p>
+        </header>
+        <p>Managed the frontend architecture team and enforced automated a11y testing in CI/CD pipelines.</p>
+      </article>
+    </section>
+
+    <!-- Section: Contact Form -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in Touch</h2>
+      <p>Have an accessible project or leadership role in mind? Send an email or leave a message below.</p>
+
+      <form action="/submit-contact" method="post">
+        <div>
+          <!-- Explicit label association for Lighthouse accessibility -->
+          <label for="user-name">Full Name (Required)</label>
+          <input type="text" id="user-name" name="name" required autocomplete="name">
+        </div>
+
+        <div>
+          <label for="user-email">Email Address (Required)</label>
+          <input type="email" id="user-email" name="email" required autocomplete="email">
+        </div>
+
+        <div>
+          <label for="user-message">Message (Required)</label>
+          <textarea id="user-message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Top-level Landmark: Footer -->
+  <footer>
+    <!-- Secondary Nav with distinct aria-label -->
+    <nav aria-label="Footer links">
+      <ul>
+        <li><a href="https://github.com/example" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/example" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="#main-content">Back to top</a></li>
+      </ul>
+    </nav>
+    <p>&copy; <time datetime="2026">2026</time> Alex Rivera. All rights reserved.</p>
+  </footer>
+</body>
+</html>
